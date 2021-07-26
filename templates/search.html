@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Reddit Reader </title>
+        <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+    </head>
+
+    <body>
+        <header>
+            <h3>{{count}} {{search_word}} jobs found.</h3>
+            <h4><a href="/export?word={{search_word}}" >Export to CSV</a></h4>
+            <h5></h5><a href="/">← Go back</a></h5>
+        </header>
+        <main>
+            {% for item in results %}
+            <div>
+                <h3>{{item.title}}</h3>
+                <h4>{{item.company}} | {{item.location}}</h4>
+                <h4><a href="{{item.link}}" target="_blank">Apply</a></h4>
+                <hr>
+            </div>
+            {% endfor %}
+        </main>
+    </body>
+</html>
